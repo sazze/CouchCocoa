@@ -32,11 +32,11 @@
 
 @implementation CouchReplication
 
-
-- (id) initWithDatabase: (CouchDatabase*)database
-                 remote: (NSURL*)remote
-                   pull: (BOOL)pull
-                options: (CouchReplicationOptions)options
+- (id) initWithDatabase:(CouchDatabase *)database 
+                 remote:(NSURL *)remote 
+                   pull:(BOOL)pull 
+                options:(CouchReplicationOptions)options
+             parameters: (NSDictionary *)parameters 
 {
     self = [super init];
     if (self) {
@@ -44,9 +44,22 @@
         _remote = [remote retain];
         _pull = pull;
         _options = options;
-
+        _parameters = parameters;
+        
     }
     return self;
+}
+
+- (id) initWithDatabase: (CouchDatabase*)database
+                 remote: (NSURL*)remote
+                   pull: (BOOL)pull
+                options: (CouchReplicationOptions)options
+{
+    return [self initWithDatabase: database 
+                           remote: remote 
+                             pull: pull 
+                          options: options 
+                       parameters: nil];
 }
 
 
@@ -67,10 +80,17 @@
 - (RESTOperation*) operationToStart: (BOOL)start {
     NSString* source = _pull ? _remote.absoluteString : _database.relativePath;
     NSString* target = _pull ? _database.relativePath : _remote.absoluteString;
+    
     NSMutableDictionary* body = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                  source, @"source",
                                  target, @"target",
                                  nil];
+
+    
+    if(_parameters) {
+        [body addEntriesFromDictionary:_parameters];
+    }
+    
     if (_options & kCouchReplicationCreateTarget)
         [body setObject: (id)kCFBooleanTrue forKey: @"create_target"];
     if (_options & kCouchReplicationContinuous)

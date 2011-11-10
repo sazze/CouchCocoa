@@ -260,12 +260,36 @@ static const NSUInteger kDocRetainLimit = 50;
     return rep;
 }
 
+- (CouchReplication*) pullFromDatabaseAtURL: (NSURL*)sourceURL 
+                                    options: (CouchReplicationOptions)options
+                                    parameters:(NSDictionary *)parameters {
+    CouchReplication* rep = [[[CouchReplication alloc] initWithDatabase: self
+                                                                 remote: sourceURL
+                                                                   pull: YES
+                                                                options: options
+                                                             parameters:parameters] autorelease];
+    [rep start];
+    return rep;
+}
+
 - (CouchReplication*) pushToDatabaseAtURL: (NSURL*)targetURL
                                options: (CouchReplicationOptions)options {
     CouchReplication* rep = [[[CouchReplication alloc] initWithDatabase: self
                                                                  remote: targetURL
                                                                    pull: NO
                                                                 options: options] autorelease];
+    [rep start];
+    return rep;
+}
+
+- (CouchReplication*) pushToDatabaseAtURL: (NSURL*)targetURL
+                                  options: (CouchReplicationOptions)options
+                               parameters:(NSDictionary *)parameters {
+    CouchReplication* rep = [[[CouchReplication alloc] initWithDatabase: self
+                                                                 remote: targetURL
+                                                                   pull: NO
+                                                                options: options
+                                                             parameters:parameters] autorelease];
     [rep start];
     return rep;
 }

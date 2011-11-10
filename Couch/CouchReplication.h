@@ -33,11 +33,15 @@ typedef NSUInteger CouchReplicationOptions;
     NSURL* _remote;
     BOOL _pull;
     CouchReplicationOptions _options;
+    NSDictionary* _parameters;
     BOOL _started;
     NSString* _taskID;
     NSString* _status;
     unsigned _completed, _total;
 }
+
+- (id) initWithDatabase: (CouchDatabase*)database remote: (NSURL*)remote pull: (BOOL)pull options: (CouchReplicationOptions)options;
+- (id) initWithDatabase:(CouchDatabase *)database remote:(NSURL *)remote pull:(BOOL)pull options:(CouchReplicationOptions)options parameters: (NSDictionary *)parameters;
 
 /** Starts the replication, asynchronously.
     @return  The operation to start replication, or nil if replication is already started. */

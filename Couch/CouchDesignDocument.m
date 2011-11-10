@@ -15,6 +15,7 @@
 
 #import "CouchDesignDocument.h"
 #import "CouchInternal.h"
+#import "NSDictionary+QueryStringBuilder.h"
 
 
 NSString* const kCouchLanguageJavaScript = @"javascript";
@@ -39,8 +40,21 @@ NSString* const kCouchLanguageErlang = @"erlang";
 
 
 - (CouchQuery*) queryViewNamed: (NSString*)viewName {
+    return [self queryViewNamed: viewName andParameters:nil];
+}
+
+- (CouchQuery*) queryViewNamed: (NSString*)viewName andParameters: (NSDictionary*)parameters {
     [[self saveChanges] wait];
-    NSString* path = [@"_view/" stringByAppendingString: viewName];
+    
+    NSString * params = [[NSString alloc] init];
+    
+    if(parameters) {
+        params = [parameters queryString];
+    }
+    
+    NSString* path = [@"_view/" stringByAppendingFormat:@"%@%@", viewName, params, nil];
+    NSLog(@"View path: %@", path);
+    
     return [[[CouchQuery alloc] initWithParent: self relativePath: path] autorelease];
 }
 

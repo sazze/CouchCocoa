@@ -41,6 +41,10 @@ extern NSString* const kCouchLanguageErlang;
     If view definitions have been modified but not saved yet, they will be saved first. */
 - (CouchQuery*) queryViewNamed: (NSString*)viewName;
 
+/** Creates a query for the given named view.
+ If view definitions have been modified but not saved yet, they will be saved first. */
+- (CouchQuery*) queryViewNamed: (NSString*)viewName andParameters: (NSDictionary*)parameters;
+
 /** The language that the functions in this design document are written in.
     Defaults to kCouchLanguageJavaScript. */
 @property (copy) NSString* language;

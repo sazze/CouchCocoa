@@ -128,6 +128,11 @@
 		27EEA5B613D6052300D7ACA4 /* REST.h in Headers */ = {isa = PBXBuildFile; fileRef = 270A664413A5BA4600791F4A /* REST.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27EF148C1396D8CC0052913E /* DemoAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EF148B1396D8CC0052913E /* DemoAppController.m */; };
 		27EF14B31396DD3B0052913E /* AddressesDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF14B21396DD3B0052913E /* AddressesDemo.xib */; };
+		BADF7F5E1428067500B69C7B /* NSDictionary+QueryStringBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BADF7F5C1428067500B69C7B /* NSDictionary+QueryStringBuilder.h */; };
+		BADF7F5F1428067500B69C7B /* NSDictionary+QueryStringBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BADF7F5C1428067500B69C7B /* NSDictionary+QueryStringBuilder.h */; };
+		BADF7F601428067500B69C7B /* NSDictionary+QueryStringBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BADF7F5C1428067500B69C7B /* NSDictionary+QueryStringBuilder.h */; };
+		BADF7F611428067500B69C7B /* NSDictionary+QueryStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BADF7F5D1428067500B69C7B /* NSDictionary+QueryStringBuilder.m */; };
+		BADF7F631428067500B69C7B /* NSDictionary+QueryStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BADF7F5D1428067500B69C7B /* NSDictionary+QueryStringBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +269,8 @@
 		27EF148B1396D8CC0052913E /* DemoAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoAppController.m; sourceTree = "<group>"; };
 		27EF14B21396DD3B0052913E /* AddressesDemo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesDemo.xib; sourceTree = "<group>"; };
 		27EFB7BD13CF66FD00FA1485 /* ShoppingDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ShoppingDemo-Info.plist"; path = "Demo/ShoppingDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BADF7F5C1428067500B69C7B /* NSDictionary+QueryStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryStringBuilder.h"; sourceTree = "<group>"; };
+		BADF7F5D1428067500B69C7B /* NSDictionary+QueryStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryStringBuilder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +345,8 @@
 		08FB7794FE84155DC02AAC07 /* Couch */ = {
 			isa = PBXGroup;
 			children = (
+				BADF7F5C1428067500B69C7B /* NSDictionary+QueryStringBuilder.h */,
+				BADF7F5D1428067500B69C7B /* NSDictionary+QueryStringBuilder.m */,
 				278B231E1391724E00DDD950 /* REST */,
 				08FB7795FE84155DC02AAC07 /* Couch */,
 				27DB821C14081FD000E57444 /* Model */,
@@ -561,6 +570,7 @@
 				27DB82261408225300E57444 /* CouchModel.h in Headers */,
 				27E4DD0D141921E000A3D8F6 /* CouchPersistentReplication.h in Headers */,
 				279276EF14215D5600002958 /* RESTBase64.h in Headers */,
+				BADF7F601428067500B69C7B /* NSDictionary+QueryStringBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +597,7 @@
 				27DB82251408225300E57444 /* CouchModel.h in Headers */,
 				27CDEC3613C67D3500C979BB /* CouchCocoa.h in Headers */,
 				279276EE14215D5600002958 /* RESTBase64.h in Headers */,
+				BADF7F5E1428067500B69C7B /* NSDictionary+QueryStringBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +624,7 @@
 				27C7280013EB238900C7ADF5 /* CouchUITableSource.h in Headers */,
 				27938C61140C01D200117675 /* CouchDynamicObject.h in Headers */,
 				27938C63140C01DC00117675 /* CouchModel.h in Headers */,
+				BADF7F5F1428067500B69C7B /* NSDictionary+QueryStringBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +942,7 @@
 				27DB82281408225300E57444 /* CouchModel.m in Sources */,
 				27E4DD0F141921E000A3D8F6 /* CouchPersistentReplication.m in Sources */,
 				279276F114215D5600002958 /* RESTBase64.m in Sources */,
+				BADF7F631428067500B69C7B /* NSDictionary+QueryStringBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +992,7 @@
 				27DB82271408225300E57444 /* CouchModel.m in Sources */,
 				27E4DD0E141921E000A3D8F6 /* CouchPersistentReplication.m in Sources */,
 				279276F014215D5600002958 /* RESTBase64.m in Sources */,
+				BADF7F611428067500B69C7B /* NSDictionary+QueryStringBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,7 +1063,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = Couch/CouchPrefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1069,7 +1083,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = Couch/CouchPrefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1338,7 +1352,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Couch.frameworik/Couch.frameworik-Prefix.pch";
+				GCC_PREFIX_HEADER = Couch/CouchPrefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1364,7 +1378,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Couch.frameworik/Couch.frameworik-Prefix.pch";
+				GCC_PREFIX_HEADER = Couch/CouchPrefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = CouchCocoa;
